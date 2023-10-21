@@ -7707,6 +7707,8 @@ body:has(#console.show) #nav-music {
   background: var(--anzhiyu-white-op);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  -webkit-box-shadow: 10px 10px 60px #fff, -10px -10px 60px #fff;
+  box-shadow: 10px 10px 60px #fff, -10px -10px 60px #fff;
   border-radius: 50%;
   color: #fff;
   text-align: center;
@@ -7747,6 +7749,21 @@ body:has(#console.show) #nav-music {
     right: 140px;
     bottom: 150px;
   }
+}
+#anMusic-page .puslue {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 #anMusic-page meting-js .aplayer {
   display: -webkit-box;
