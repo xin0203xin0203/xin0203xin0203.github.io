@@ -6,7 +6,7 @@
   <link href="https://xin0203xin0203.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin0203xin0203.github.io/"/>
-  <updated>2023-09-26T15:28:46.439Z</updated>
+  <updated>2023-10-29T14:54:51.869Z</updated>
   <id>https://xin0203xin0203.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Photoshop</title>
+    <link href="https://xin0203xin0203.github.io/posts/9521.html"/>
+    <id>https://xin0203xin0203.github.io/posts/9521.html</id>
+    <published>2023-10-29T13:30:32.012Z</published>
+    <updated>2023-10-29T14:54:51.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>前置准备：<br><a href="https://www.yuque.com/yuqueyonghub89qji/ctd2b5/int42sxavx9n5bmu?view=doc_embed">Photoshop安装教程</a><br><a href="https://www.yuque.com/yuqueyonghub89qji/ctd2b5/soygm9tgu96z7qp0?view=doc_embed">基础篇</a></p><p>参考视频：<br><a href="https://player.bilibili.com/player.html?bvid=BV1YW411e7n5&amp;p=41&amp;page=41&amp;autoplay=0">点击查看【bilibili】</a></p><p>素材：<br><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/33576317/1678793990491-1fd0285b-0e48-4d67-8e1d-9253f3a8e6a1.jpeg#averageHue=%23f5f5f5&amp;clientId=u5ec6d62c-f69a-4&amp;from=drop&amp;id=u565e3c34&amp;originHeight=523&amp;originWidth=1024&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=118800&amp;status=done&amp;style=none&amp;taskId=u45d9f87e-b893-4f4c-9c7d-a3d353ddc1a&amp;title=" alt="B005.jpg"></p><p>第一步：用钢笔工具抠图</p><ol><li>用<code>钢笔工具（P）</code>，把需要的部分选出一个区域，再点击<code>蒙版</code></li></ol><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33576317/1678796532252-75e7e079-2b00-42cb-8174-8bf66b307680.png#averageHue=%23d9d9d9&amp;clientId=u5ec6d62c-f69a-4&amp;from=ui&amp;id=u7c071555&amp;originHeight=800&amp;originWidth=1448&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=347122&amp;status=done&amp;style=none&amp;taskId=u11cd86d3-68d0-4479-b35d-67475c61f9b&amp;title=" alt="1.png"><br>第二步：在蒙版内抠图</p><ol><li>用<code>钢笔工具（P）</code>，把需要的部分选出一个区域</li><li>设置<code>排除重叠形状</code></li></ol><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33576317/1678797845859-fbe25c7e-1820-4ca4-b460-c14ccaff95f3.png#averageHue=%23868584&amp;clientId=u5ec6d62c-f69a-4&amp;from=ui&amp;id=u6bb86614&amp;originHeight=189&amp;originWidth=254&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=8625&amp;status=done&amp;style=none&amp;taskId=uc72bb46e-8e27-42a3-bfde-658bf44b215&amp;title=" alt="1.png"><br><img src="https://cdn.nlark.com/yuque/0/2023/png/33576317/1678797478623-f4c55f6a-fa35-4eda-bd19-4cb5007c1897.png#averageHue=%23dadada&amp;clientId=u5ec6d62c-f69a-4&amp;from=ui&amp;id=u56ab52e6&amp;originHeight=596&amp;originWidth=1319&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=264106&amp;status=done&amp;style=none&amp;taskId=u96d095f3-7e2e-42c0-8b21-c5e3e3a822c&amp;title=" alt="1.png"><br>第三步：创建新的背景</p><ol><li>添加图层后，填充前景色，并选择颜色，按<code>Alt+delete</code>填充颜色</li></ol><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33576317/1678797943775-c226815f-9a31-457f-bb8c-9f84fa8e5607.png#averageHue=%23565656&amp;clientId=u5ec6d62c-f69a-4&amp;from=ui&amp;id=u0ee0aaac&amp;originHeight=575&amp;originWidth=255&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19709&amp;status=done&amp;style=none&amp;taskId=u156c80f9-21da-4cbb-89e9-e0826b54b8b&amp;title=" alt="1.png"><br>第四步：用钢笔工具对局部地方进行竞精细的抠图</p><ol><li>注意：抠图的过程，点击<code>蒙版</code>在进行<code>钢笔工具</code>描边，描完点击<code>回车</code></li><li>如果抠图不满意，则用<code>选择工具（A）</code>对线条进行修改</li></ol><p><img src="https://cdn.nlark.com/yuque/0/2023/png/33576317/1678798452992-a4311dab-0184-4bf5-bafc-ab682bcbd4fa.png#averageHue=%23777574&amp;clientId=u5ec6d62c-f69a-4&amp;from=ui&amp;id=uf7ba6eb6&amp;originHeight=534&amp;originWidth=1041&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=235668&amp;status=done&amp;style=none&amp;taskId=uf8d08489-5bf3-4a67-9bdf-ff3edd82586&amp;title=" alt="1.png"><br>最终效果：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/33576317/1678798684612-9d557d97-cf23-4b38-8ddb-6139c5c7575d.png#averageHue=%2308c615&amp;clientId=u5ec6d62c-f69a-4&amp;from=drop&amp;id=ue29268ca&amp;originHeight=523&amp;originWidth=1024&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=184570&amp;status=done&amp;style=none&amp;taskId=u5f42e432-3518-402e-8556-72b41355f30&amp;title=" alt="B005.png"></p>]]></content>
+    
+    
+    <summary type="html">文章描述</summary>
+    
+    
+    
+    
+    <category term="6" scheme="https://xin0203xin0203.github.io/tags/6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6</title>
+    <link href="https://xin0203xin0203.github.io/posts/9520.html"/>
+    <id>https://xin0203xin0203.github.io/posts/9520.html</id>
+    <published>2023-10-24T02:42:14.343Z</published>
+    <updated>2023-10-24T02:44:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="夏至"><a href="#夏至" class="headerlink" title="夏至"></a>夏至</h1><blockquote><p>一生的时间很短<br>短到不过是两颗心之间的距离<br>一生的时间也很长<br>不如我们试着走走看</p></blockquote><div class="tip "><p>6</p></div>]]></content>
+    
+    
+    <summary type="html">文章描述</summary>
+    
+    
+    
+    
+    <category term="6" scheme="https://xin0203xin0203.github.io/tags/6/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
