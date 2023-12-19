@@ -426,3 +426,32 @@
       left: -66px;
     }
   }
+
+/* 设置首页标签大小(位于文章标题的上方小标签) */
+/* 最新标签 */
+#recent-posts > .recent-post-item .recent-post-info .recent-post-info-top .newPost{
+  font-size: .8rem;
+  color: rgb(105 105 114 / 80%);
+}
+/* 未读标签 */
+#recent-posts > .recent-post-item .unvisited-post{
+  font-size: .8rem;
+  color: rgb(105 105 114 / 80%);
+}
+/* 自定义标签 */
+#recent-posts > .recent-post-item .recent-post-info .recent-post-info-top .article-categories-original{
+  font-size: .8rem;
+  color: rgb(105 105 114 / 80%);
+}
+/* 设置文章标题 */
+#recent-posts > .recent-post-item .recent-post-info .article-title{
+  line-height: 40px;
+  width: 102%;
+}
+/* 设置文章下方标签 */
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap{
+  bottom: 5px;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .post-meta-date{
+  margin-bottom: -25px;
+}
