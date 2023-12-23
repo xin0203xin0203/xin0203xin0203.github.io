@@ -254,7 +254,7 @@
       }
   }
 
-  /* 导航栏 */
+  /* **************************导航栏************************** */
   .page:has(#anMusic-page) #nav {
     backdrop-filter: none !important;
     background: 0 0 !important;
@@ -278,7 +278,7 @@
     background-color: transparent;
   }
   
-  /* **** 移动端样式 ***** */
+  /* **** **************************移动端样式 ******************************* */
   @media screen and (max-width: 768px) {
     body:has(#anMusic-page) #rightside {
       display: none;
@@ -427,7 +427,7 @@
     }
   }
 
-/* 设置首页标签大小(位于文章标题的上方小标签) */
+/* **************************设置首页标签大小(位于文章标题的上方小标签)************************** */
 /* 最新标签 */
 #recent-posts > .recent-post-item .recent-post-info .recent-post-info-top .newPost{
   font-size: .8rem;
@@ -456,3 +456,233 @@
   margin-bottom: -25px;
 }
 
+/* **************************搜索模块美化功能 ***************************/
+/* #algolia-search hr {
+  display: none;
+} */
+#algolia-search .search-nav{
+  height:40px;
+  margin: 0;
+}
+/*搜索叉除*/
+#algolia-search .search-nav .search-close-button i{
+  font-size: 23px;
+}
+#algolia-search .search-dialog{
+  border:none;
+  border-radius: 0;
+}
+/* 搜索标题 */
+#algolia-search .search-dialog .search-dialog-title{
+  color:#675556;
+}
+#algolia-search .search-dialog .ais-SearchBox .ais-SearchBox-form{
+  height: 35px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+}
+/* 搜索输入框 */
+#algolia-search .search-dialog .ais-SearchBox input{
+  padding: 0 14px;
+  height: 100%;
+  width: calc(100% - 50px);
+  outline: none;
+  border: 2px solid #675556;
+  border-right: 0;
+  border-radius: 40px 0 0 40px;
+  background: transparent;
+  color: #4c4948;
+}
+#algolia-search .search-dialog .ais-SearchBox input::-webkit-search-cancel-button{
+  -webkit-appearance: none
+}
+/* 搜索图标 */
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50px;
+  border: 2px solid #4c4948;
+  border-left: 0;
+  border-radius: 0 40px 40px 0;
+}
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit svg{
+  width:50%;
+  height:50%;
+}
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit svg path{
+  fill: #4c4948;
+}
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit &:hover svg path {
+  fill: #675556;
+}
+#algolia-search .search-dialog .ais-SearchBox span.ais-SearchBox-loadingIndicator{
+  position: absolute;
+  left: 50%;
+  top: 93px;
+  transform: translate(-50%);
+}
+/* 搜索框下方的内容 */
+#algolia-search .search-dialog .ais-Hits-list{
+  margin:0;
+  padding:0;
+  @extend .list-beauty
+}
+/* 搜索框中的链接设置 */
+#algolia-search .search-dialog .ais-Hits-list:hover{
+  cursor:pointer;
+  transition: all .2s;
+}
+#algolia-search .search-dialog .ais-Hits-list a{
+  color: #4c4948;
+  font-weight: bold;
+}
+#algolia-search .search-dialog .ais-Hits-list a:hover{
+  color: #f47466;
+}
+/* 搜索内容框的设置 */
+#algolia-search .search-dialog .ais-Hits-list li{
+  padding: 0 10px;
+  border-radius: 8px;
+  border: var(--style-border);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#algolia-search .search-dialog .ais-Hits-list li:hover{
+  background: #4c4948;
+}
+#algolia-search .search-dialog .ais-Hits-list mark{
+  background: transparent;
+  color: #f47466;
+  font-weight: bold;
+}
+/* 搜索框中页数设置 */
+#algolia-search .search-dialog .algolia-hit-item-content{
+  margin: 0 0 5px;
+  word-break: break-all;
+}
+#algolia-search .search-dialog .ais-Pagination{
+  margin: 10px 0;
+  height: 35px;
+  padding: 0;
+  text-align: center;
+}
+/* 搜索框中页数页数定位 */
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-list{
+  margin:0;
+  padding: 0;
+  display: inline;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item{
+  display: inline;
+  margin: 0 4px;
+  padding: 0;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item .ais-Pagination-link{
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item .ais-Pagination-link:hover{
+  background: #392e2a;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a{
+  background: #333;
+  color: #eee;
+  cursor: default;
+  border-radius: 5px;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a:hover{
+  color: #f47466;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--disabled{
+  visibility: hidden;
+}
+/* LOGO */
+#algolia-search .search-dialog .algolia-logo{
+  padding-top: 2px;
+  width: 80px;
+  height: 30px;
+}
+#algolia-search .search-dialog #algolia-hits>div{
+  overflow-y: scroll;
+  max-height: 400px;
+}
+/* 自适应 */
+@media screen and (min-width: 768px){
+  max-height: calc(80vh - 240px);
+}
+@media screen and (min-width: 768px){
+  max-height: calc(100vh - 260px);
+  max-height: calc(100dvh - 200px);
+}
+#algolia-search .search-dialog #algolia-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+#algolia-search .search-dialog #algolia-info .algolia-stats{
+  font-size: 14px;
+}
+#algolia-search .search-dialog #algolia-info .algolia-stats span{
+  position: relative;
+  top:-15px;
+}
+#algolia-search .search-dialog #algolia-info .algolia-poweredBy {
+  display: flex;
+  position: relative;
+  top: 10px;
+}
+/* #algolia-search .search-dialog #algolia-info .algolia-poweredBy .ais-PoweredBy a{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#algolia-search .search-dialog #algolia-info .ais-PoweredBy-logo path:first-child {
+  display: none;
+}
+#algolia-search .search-dialog #algolia-info .ais-PoweredBy-logo path:nth-child(2),
+#algolia-search .search-dialog #algolia-info .ais-PoweredBy-logo path:nth-child(4){
+  fill: #f47466;
+} */
+/* 标签设置 */
+#algolia-search .search-dialog #algolia-hits{
+  overflow-y: scroll;
+  min-height: 20px;
+}
+#algolia-search .search-dialog #algolia-hits .tag-list{
+  padding: 5px 8px;
+  border-radius: 10px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  border: var(--style-border-always);
+  cursor: pointer;
+}
+
+/* ************************** essay页面的顶栏背景图 ************************** */
+#page #essay_page .essayPage{
+  background: url(https://vip.helloimg.com/images/2023/12/19/o7THQ5.jpg) left 28% / cover no-repeat;
+}

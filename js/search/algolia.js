@@ -101,7 +101,7 @@ window.addEventListener("load", () => {
     placeholder: algolia.languages.input_placeholder,
     showLoadingIndicator: true,
     searchOnEnterKeyPressOnly: true,
-    searchAsYouType: false,
+    searchAsYouType: true, // 新增 可以实现回车或点击按钮搜索，不会每次输入都搜索
   });
 
   const hits = instantsearch.widgets.hits({
