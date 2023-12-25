@@ -684,5 +684,10 @@
 
 /* ************************** essay页面的顶栏背景图 ************************** */
 #page #essay_page .essayPage{
-  background: url(https://vip.helloimg.com/images/2023/12/19/o7THQ5.jpg) left 28% / cover no-repeat;
+  background: url(https://vip.helloimg.com/images/2023/12/25/o7ft41.jpg) left 28%/ cover no-repeat !important;
+}
+
+/* ************************** 朋友圈页面的顶栏背景图 ************************** */
+#page .fcircle_page .fcirclePage{
+  background: url(https://vip.helloimg.com/images/2023/12/25/o7ft41.jpg) left 28%/ cover no-repeat !important;
 }
