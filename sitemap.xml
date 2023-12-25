@@ -2,9 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xin0203xin0203.github.io/posts/188aa76e.html</loc>
+    
+    <lastmod>2024-12-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/posts/e593d1c2.html</loc>
+    
+    <lastmod>2024-12-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/posts/1d7b1dd3.html</loc>
+    
+    <lastmod>2024-12-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/posts/dd96b61.html</loc>
+    
+    <lastmod>2024-12-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xin0203xin0203.github.io/posts/3cc2c9ad.html</loc>
     
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2024-12-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +49,7 @@
   <url>
     <loc>https://xin0203xin0203.github.io/posts/e7ef9c46.html</loc>
     
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2024-12-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -236,33 +272,6 @@
   </url>
   
   <url>
-    <loc>https://xin0203xin0203.github.io/posts/0.html</loc>
-    
-    <lastmod>2023-12-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xin0203xin0203.github.io/posts/0.html</loc>
-    
-    <lastmod>2023-12-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xin0203xin0203.github.io/posts/0.html</loc>
-    
-    <lastmod>2023-12-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xin0203xin0203.github.io/categories/index.html</loc>
     
     <lastmod>2023-12-15</lastmod>
@@ -353,6 +362,34 @@
 
   
   <url>
+    <loc>https://xin0203xin0203.github.io/tags/6/</loc>
+    <lastmod>2023-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2023-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/tags/Python/</loc>
+    <lastmod>2023-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/tags/Jupyter/</loc>
+    <lastmod>2023-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://xin0203xin0203.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2023-12-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -373,14 +410,14 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>https://xin0203xin0203.github.io/tags/6/</loc>
+    <loc>https://xin0203xin0203.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  
-
   
   <url>
     <loc>https://xin0203xin0203.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8/</loc>
