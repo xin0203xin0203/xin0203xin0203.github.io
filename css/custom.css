@@ -1,0 +1,693 @@
+#page:has(#anMusic-page) {
+    border: 0;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  #an_music_bg {
+    display: none;
+    filter: blur(63px);
+    opacity: 0.6;
+    position: fixed;
+    z-index: -999;
+    background-attachment: local;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    transform: rotate(0deg);
+  }
+  body:has(#anMusic-page) #an_music_bg {
+    display: block;
+  }
+  
+  body:has(#anMusic-page) {
+    background: rgb(13, 13, 13);
+  }
+  
+  #anMusic-page meting-js .aplayer {
+    display: flex;
+    flex-direction: row-reverse;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+  }
+  
+  body:has(#anMusic-page) #web_bg {
+    display: none;
+  }
+  body:has(#anMusic-page) #footer,
+  body:has(#anMusic-page) #nav-music {
+    display: none;
+  }
+  
+  #anMusic-page .aplayer-body {
+    width: 40%;
+    height: 75vh;
+  }
+  
+  #anMusic-page ol > li:hover {
+    background: #ffffff33;
+    border-radius: 6px;
+  }
+  #anMusic-page .aplayer-pic {
+    float: none;
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+  
+  #anMusic-page .aplayer-info {
+    margin: 0 20px 0 20px;
+    border-bottom: none;
+  }
+  
+  #anMusic-page .aplayer-info .aplayer-music {
+    text-align: center;
+    height: auto;
+    margin: 15px;
+  }
+  
+  #anMusic-page .aplayer-info .aplayer-music .aplayer-author,
+  #anMusic-page .aplayer-info .aplayer-music .aplayer-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  #anMusic-page .aplayer-info .aplayer-lrc {
+    height: 800%;
+    margin-top: 80px;
+    mask-image: linear-gradient(to bottom, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #0000, #0000);
+  }
+  #anMusic-page .aplayer-info .aplayer-lrc p {
+    font-size: 14px;
+    color: #fff;
+  }
+  #anMusic-page .aplayer .aplayer-lrc:after,
+  #anMusic-page .aplayer .aplayer-lrc:before {
+    display: none;
+  }
+  
+  /* 控制器 */
+  #anMusic-page .aplayer-info .aplayer-controller {
+    position: fixed;
+    max-width: 1500px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+  }
+  #anMusic-page .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+    margin: 0 160px 0 150px;
+  }
+  #anMusic-page .aplayer-info .aplayer-controller .aplayer-played {
+    background: var(--anzhiyu-white) !important;
+  }
+  #anMusic-page .aplayer-info .aplayer-controller .aplayer-thumb {
+    -webkit-transform: none;
+    transform: none;
+    background: #fff !important;
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-back,
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward,
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
+    display: inline;
+    position: fixed;
+  }
+  #anMusic-page .aplayer-info .aplayer-time {
+    position: absolute;
+    width: 100%;
+    bottom: 21px;
+    height: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner {
+    margin-right: 18px;
+    margin-top: -8px;
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-back {
+    position: absolute;
+    left: 0;
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
+    position: absolute;
+    left: 40px;
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward {
+    position: absolute;
+    left: 80px;
+  }
+  
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 15px;
+  }
+  
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-menu {
+    display: none;
+  }
+  
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon path {
+    fill: var(--anzhiyu-white);
+    opacity: 0.8;
+  }
+  
+  #anMusic-page .aplayer-list {
+    width: 60%;
+    max-height: none !important;
+    height: 100%;
+  }
+  #anMusic-page ol {
+    max-height: 75vh !important;
+    padding-right: 25px;
+  }
+  #anMusic-page ol > li {
+    border-top: 1px solid transparent;
+    font-size: 14px;
+  }
+  #anMusic-page ol > li.aplayer-list-light {
+    background: rgb(255 255 255 / 20%);
+    border-radius: 6px;
+  }
+  
+  #anMusic-page ol > li span {
+    color: var(--anzhiyu-white);
+  }
+  
+  #anMusic-page ol > li.aplayer-list-light .aplayer-list-cur {
+    display: none;
+  }
+  #anMusic-page ol > li span.aplayer-list-author {
+    opacity: 0.6;
+  }
+  #anMusic-page #anMusicSwitching .anzhiyufont{
+    font-size: 21px;
+  }
+  #anMusic-page #anMusicSwitching .p1 {
+      animation: warn 2s cubic-bezier(0, 0, 0.28, 1.44) infinite;
+  }
+
+  #anMusic-page #anMusicSwitching .p2 {
+      animation: warn2 2s ease-out infinite
+  }
+
+  @keyframes warn {
+      0% {
+          transform: scale(1.2);
+          opacity: 0
+      }
+
+      25% {
+          transform: scale(1.4);
+          opacity: .1
+      }
+
+      50% {
+          transform: scale(1.6);
+          opacity: .3
+      }
+
+      75% {
+          transform: scale(1.8);
+          opacity: .5
+      }
+
+      100% {
+          transform: scale(2);
+          opacity: 0
+      }
+  }
+
+  @keyframes warn2 {
+      0% {
+          transform: scale(1.2);
+          opacity: 0
+      }
+
+      25% {
+          transform: scale(1.2);
+          opacity: .1
+      }
+
+      50% {
+          transform: scale(1.2);
+          opacity: .3
+      }
+
+      75% {
+          transform: scale(1.5);
+          opacity: .5
+      }
+
+      100% {
+          transform: scale(1.8);
+          opacity: 0
+      }
+  }
+
+  /* **************************导航栏************************** */
+  .page:has(#anMusic-page) #nav {
+    backdrop-filter: none !important;
+    background: 0 0 !important;
+    border-bottom: none !important;
+  }
+  
+  .page:has(#anMusic-page) #page-header.not-top-img #nav a,
+  .page:has(#anMusic-page) #page-header #nav .back-home-button {
+    color: var(--anzhiyu-white);
+  }
+  
+  body:has(#anMusic-page) .s-sticker div {
+    color: var(--anzhiyu-white) !important;
+  }
+  
+  body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-loop {
+    margin-right: 15px;
+  }
+  
+  [data-theme="dark"] .page:has(#anMusic-page) #page-header:before {
+    background-color: transparent;
+  }
+  
+  /* **** **************************移动端样式 ******************************* */
+  @media screen and (max-width: 768px) {
+    body:has(#anMusic-page) #rightside {
+      display: none;
+    }
+    body:has(#anMusic-page) #content-inner,
+    body:has(#anMusic-page) #page {
+      z-index: auto;
+    }
+    /* 歌曲列表 */
+    #anMusic-page .aplayer-list {
+      position: fixed;
+      z-index: 1002;
+      width: 100%;
+      bottom: -76%;
+      left: 0;
+      background: var(--sidebar-bg);
+      height: auto;
+      border-radius: 15px 15px 0px 0px;
+      padding: 15px 0px;
+    }
+    #anMusic-page .aplayer-list.aplayer-list-hide {
+      bottom: 0% !important;
+    }
+    #anMusic-page ol {
+      max-height: 60vh !important;
+      padding-right: 0px;
+    }
+    #anMusic-page ol > li {
+      display: flex;
+      margin: 0 10px;
+    }
+    #anMusic-page ol > li span {
+      color: var(--font-color);
+    }
+    #anMusic-page ol > li span.aplayer-list-title {
+      width: 30%;
+    }
+    #anMusic-page ol > li.aplayer-list-light {
+      background: #33a673;
+      padding: 5px 20px;
+      border-radius: 10px;
+    }
+    #anMusic-page ol > li.aplayer-list-light span {
+      color: #fff;
+    }
+    #anMusic-page ol > li span.aplayer-list-title {
+      max-width: 55%;
+      width: auto;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+    }
+    #anMusic-page ol > li span.aplayer-list-author {
+      position: absolute;
+      right: 10px;
+      width: auto;
+      max-width: 35%;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+    }
+    #anMusic-page ol > li.aplayer-list-light span.aplayer-list-author {
+      right: 15px;
+    }
+    /* 歌词信息 */
+    #anMusic-page .aplayer-body {
+      width: 100%;
+  
+      position: fixed;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 100px;
+    }
+    #anMusic-page .aplayer-info .aplayer-lrc {
+      margin-top: 40px;
+      height: auto;
+      max-height: 200%;
+      min-height: 100%;
+      mask-image: linear-gradient(to bottom, #000, #000, #000, #000, #0000, #0000);
+    }
+    #anMusic-page .aplayer-info .aplayer-lrc p.aplayer-lrc-current {
+      color: #33a673;
+    }
+    /* 控制按键和进度条 */
+    #anMusic-page .aplayer-info .aplayer-controller {
+      width: 100%;
+      bottom: 100px;
+    }
+    #anMusic-page .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+      margin: 0 30px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time {
+      bottom: -40px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner {
+      position: absolute;
+      width: 100%;
+      margin-right: 0;
+      margin-top: -33px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner .aplayer-dtime {
+      position: absolute;
+      right: 30px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner .aplayer-ptime {
+      position: absolute;
+      left: 35px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-back {
+      margin: auto;
+      right: 110px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
+      margin: auto;
+      right: 0;
+      left: 0;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward {
+      margin: auto;
+      left: 110px;
+      right: 0;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-order {
+      position: absolute;
+      left: 22px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-loop {
+      position: absolute;
+      right: 25px;
+    }
+    #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-menu {
+      display: inline;
+      position: absolute;
+      right: 25px;
+      top: -90px;
+    }
+    #anMusic-page .aplayer-volume-bar-wrap {
+      bottom: 0px;
+      right: 7px;
+    }
+    #anMusic-page .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap {
+      left: -66px;
+    }
+  }
+
+/* **************************设置首页标签大小(位于文章标题的上方小标签)************************** */
+/* 最新标签 */
+#recent-posts > .recent-post-item .recent-post-info .recent-post-info-top .newPost{
+  font-size: .8rem;
+  color: rgb(105 105 114 / 80%);
+}
+/* 未读标签 */
+#recent-posts > .recent-post-item .unvisited-post{
+  font-size: .8rem;
+  color: rgb(105 105 114 / 80%);
+}
+/* 自定义标签 */
+#recent-posts > .recent-post-item .recent-post-info .recent-post-info-top .article-categories-original{
+  font-size: .8rem;
+  color: rgb(105 105 114 / 80%);
+}
+/* 设置文章标题 */
+#recent-posts > .recent-post-item .recent-post-info .article-title{
+  line-height: 40px;
+  width: 102%;
+}
+/* 设置文章下方标签 */
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap{
+  bottom: 5px;
+}
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .post-meta-date{
+  margin-bottom: -25px;
+}
+
+/* **************************搜索模块美化功能 ***************************/
+/* #algolia-search hr {
+  display: none;
+} */
+#algolia-search .search-nav{
+  height:40px;
+  margin: 0;
+}
+/*搜索叉除*/
+#algolia-search .search-nav .search-close-button i{
+  font-size: 23px;
+}
+#algolia-search .search-dialog{
+  border:none;
+  border-radius: 0;
+}
+/* 搜索标题 */
+#algolia-search .search-dialog .search-dialog-title{
+  color:#675556;
+}
+#algolia-search .search-dialog .ais-SearchBox .ais-SearchBox-form{
+  height: 35px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+}
+/* 搜索输入框 */
+#algolia-search .search-dialog .ais-SearchBox input{
+  padding: 0 14px;
+  height: 100%;
+  width: calc(100% - 50px);
+  outline: none;
+  border: 2px solid #675556;
+  border-right: 0;
+  border-radius: 40px 0 0 40px;
+  background: transparent;
+  color: #4c4948;
+}
+#algolia-search .search-dialog .ais-SearchBox input::-webkit-search-cancel-button{
+  -webkit-appearance: none
+}
+/* 搜索图标 */
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50px;
+  border: 2px solid #4c4948;
+  border-left: 0;
+  border-radius: 0 40px 40px 0;
+}
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit svg{
+  width:50%;
+  height:50%;
+}
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit svg path{
+  fill: #4c4948;
+}
+#algolia-search .search-dialog .ais-SearchBox button.ais-SearchBox-submit &:hover svg path {
+  fill: #675556;
+}
+#algolia-search .search-dialog .ais-SearchBox span.ais-SearchBox-loadingIndicator{
+  position: absolute;
+  left: 50%;
+  top: 93px;
+  transform: translate(-50%);
+}
+/* 搜索框下方的内容 */
+#algolia-search .search-dialog .ais-Hits-list{
+  margin:0;
+  padding:0;
+  @extend .list-beauty
+}
+/* 搜索框中的链接设置 */
+#algolia-search .search-dialog .ais-Hits-list:hover{
+  cursor:pointer;
+  transition: all .2s;
+}
+#algolia-search .search-dialog .ais-Hits-list a{
+  color: #4c4948;
+  font-weight: bold;
+}
+#algolia-search .search-dialog .ais-Hits-list a:hover{
+  color: #f47466;
+}
+/* 搜索内容框的设置 */
+#algolia-search .search-dialog .ais-Hits-list li{
+  padding: 0 10px;
+  border-radius: 8px;
+  border: var(--style-border);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#algolia-search .search-dialog .ais-Hits-list li:hover{
+  background: #4c4948;
+}
+#algolia-search .search-dialog .ais-Hits-list mark{
+  background: transparent;
+  color: #f47466;
+  font-weight: bold;
+}
+/* 搜索框中页数设置 */
+#algolia-search .search-dialog .algolia-hit-item-content{
+  margin: 0 0 5px;
+  word-break: break-all;
+}
+#algolia-search .search-dialog .ais-Pagination{
+  margin: 10px 0;
+  height: 35px;
+  padding: 0;
+  text-align: center;
+}
+/* 搜索框中页数页数定位 */
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-list{
+  margin:0;
+  padding: 0;
+  display: inline;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item{
+  display: inline;
+  margin: 0 4px;
+  padding: 0;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item .ais-Pagination-link{
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item .ais-Pagination-link:hover{
+  background: #392e2a;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a{
+  background: #333;
+  color: #eee;
+  cursor: default;
+  border-radius: 5px;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a:hover{
+  color: #f47466;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--disabled{
+  visibility: hidden;
+}
+/* LOGO */
+#algolia-search .search-dialog .algolia-logo{
+  padding-top: 2px;
+  width: 80px;
+  height: 30px;
+}
+#algolia-search .search-dialog #algolia-hits>div{
+  overflow-y: scroll;
+  max-height: 400px;
+}
+/* 自适应 */
+@media screen and (min-width: 768px){
+  max-height: calc(80vh - 240px);
+}
+@media screen and (min-width: 768px){
+  max-height: calc(100vh - 260px);
+  max-height: calc(100dvh - 200px);
+}
+#algolia-search .search-dialog #algolia-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+#algolia-search .search-dialog #algolia-info .algolia-stats{
+  font-size: 14px;
+}
+#algolia-search .search-dialog #algolia-info .algolia-stats span{
+  position: relative;
+  top:-15px;
+}
+#algolia-search .search-dialog #algolia-info .algolia-poweredBy {
+  display: flex;
+  position: relative;
+  top: 10px;
+}
+/* #algolia-search .search-dialog #algolia-info .algolia-poweredBy .ais-PoweredBy a{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#algolia-search .search-dialog #algolia-info .ais-PoweredBy-logo path:first-child {
+  display: none;
+}
+#algolia-search .search-dialog #algolia-info .ais-PoweredBy-logo path:nth-child(2),
+#algolia-search .search-dialog #algolia-info .ais-PoweredBy-logo path:nth-child(4){
+  fill: #f47466;
+} */
+/* 标签设置 */
+#algolia-search .search-dialog #algolia-hits{
+  overflow-y: scroll;
+  min-height: 20px;
+}
+#algolia-search .search-dialog #algolia-hits .tag-list{
+  padding: 5px 8px;
+  border-radius: 10px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  border: var(--style-border-always);
+  cursor: pointer;
+}
+
+/* ************************** essay页面的顶栏背景图 ************************** */
+#page #essay_page .essayPage{
+  background: url(https://vip.helloimg.com/images/2023/12/25/o7ft41.jpg) left 28%/ cover no-repeat;
+}
+
+/* ************************** 朋友圈页面的顶栏背景图 ************************** */
+#page .fcircle_page .fcirclePage{
+  background: url(https://vip.helloimg.com/images/2023/12/25/o7ft41.jpg) left 28%/ cover no-repeat;
+}
