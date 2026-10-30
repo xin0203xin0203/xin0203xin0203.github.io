@@ -65,33 +65,6 @@
   </url>
   
   <url>
-    <loc>https://xin0203xin0203.github.io/equipment/index.html</loc>
-    
-    <lastmod>2026-10-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xin0203xin0203.github.io/essay/index.html</loc>
-    
-    <lastmod>2026-10-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xin0203xin0203.github.io/fcircle/index.html</loc>
-    
-    <lastmod>2026-10-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xin0203xin0203.github.io/posts/ec54ee2f.html</loc>
     
     <lastmod>2026-10-30</lastmod>
@@ -138,6 +111,33 @@
   
   <url>
     <loc>https://xin0203xin0203.github.io/collect/index.html</loc>
+    
+    <lastmod>2026-10-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/equipment/index.html</loc>
+    
+    <lastmod>2026-10-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/essay/index.html</loc>
+    
+    <lastmod>2026-10-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/fcircle/index.html</loc>
     
     <lastmod>2026-10-30</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://xin0203xin0203.github.io/posts/1ec96998.html</loc>
+    <loc>https://xin0203xin0203.github.io/posts/5a2ba262.html</loc>
     
     <lastmod>2024-12-15</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://xin0203xin0203.github.io/posts/5a2ba262.html</loc>
+    <loc>https://xin0203xin0203.github.io/posts/1ec96998.html</loc>
     
     <lastmod>2024-12-15</lastmod>
     
@@ -481,20 +481,6 @@
   </url>
   
   <url>
-    <loc>https://xin0203xin0203.github.io/tags/ECharts/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xin0203xin0203.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://xin0203xin0203.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -510,6 +496,20 @@
   
   <url>
     <loc>https://xin0203xin0203.github.io/tags/HADOOP%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/tags/ECharts/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xin0203xin0203.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
