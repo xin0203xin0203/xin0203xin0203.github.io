@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>商品销量分析看板（Hadoop 输出）</title>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px;
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    background: #f5f7fa; color: #1f2d3d;
+  }
+  header { margin-bottom: 18px; }
+  h1 { font-size: 22px; margin: 0 0 6px; color: #1F4E79; }
+  .sub { font-size: 13px; color: #7a8899; }
+  .cards { display: flex; gap: 14px; flex-wrap: wrap; margin: 16px 0 20px; }
+  .card {
+    flex: 1 1 180px; background: #fff; border-radius: 10px; padding: 14px 16px;
+    box-shadow: 0 1px 4px rgba(31,78,121,.08); border-left: 4px solid #1F4E79;
+  }
+  .card .k { font-size: 12px; color: #8899aa; }
+  .card .v { font-size: 22px; font-weight: 700; color: #1F4E79; margin-top: 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel {
+    background: #fff; border-radius: 10px; padding: 12px;
+    box-shadow: 0 1px 4px rgba(31,78,121,.08);
+  }
+  .panel.full { grid-column: 1 / -1; }
+  .chart { width: 100%; height: 380px; }
+  #tip { font-size: 13px; color: #7a8899; padding: 8px 4px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 7px 10px; border-bottom: 1px solid #eef2f6; text-align: left; }
+  th { background: #1F4E79; color: #fff; font-weight: 600; }
+  tbody tr:hover { background: #f0f6fb; cursor: pointer; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>商品销量分析看板</h1>
+  <div class="sub">数据来源：HDFS <code>/data/products/shoptop/part-00000</code> ｜ 计算方式：Hadoop Streaming（Python mapper + reducer）｜ 点击柱状图或表格行可看单店详情</div>
+</header>
+
+<div class="cards">
+  <div class="card"><div class="k">店铺数</div><div class="v" id="c-shop">-</div></div>
+  <div class="card"><div class="k">累计销量（件）</div><div class="v" id="c-sales">-</div></div>
+  <div class="card"><div class="k">累计销售额（元）</div><div class="v" id="c-gmv">-</div></div>
+  <div class="card"><div class="k">销量冠军</div><div class="v" id="c-top" style="font-size:17px">-</div></div>
+</div>
+
+<div class="grid">
+  <div class="panel"><div id="bar" class="chart"></div></div>
+  <div class="panel"><div id="pie" class="chart"></div></div>
+  <div class="panel full"><div id="scatter" class="chart" style="height:340px"></div></div>
+  <div class="panel full">
+    <div id="tip">全部店铺明细（按销量降序）</div>
+    <table>
+      <thead><tr><th>排名</th><th>店铺</th><th style="text-align:right">累计销量</th><th style="text-align:right">累计销售额</th><th style="text-align:right">占总额</th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const DATA = [{"shop": "手机配件专营店", "sales": 1195069, "gmv": 1787128139.54}, {"shop": "车品配件旗舰店", "sales": 1191223, "gmv": 1796078554.05}, {"shop": "美妆护肤专营店", "sales": 1189156, "gmv": 1785233079.93}, {"shop": "味道食品旗舰店", "sales": 1185306, "gmv": 1785712664.96}, {"shop": "萌宠生活馆", "sales": 1181710, "gmv": 1796788685.25}, {"shop": "户外运动装备店", "sales": 1179065, "gmv": 1772674605.06}, {"shop": "星辰家居旗舰店", "sales": 1174164, "gmv": 1765236334.61}, {"shop": "图书音像旗舰店", "sales": 1167553, "gmv": 1780785646.54}, {"shop": "数码优选旗舰店", "sales": 1167468, "gmv": 1755040009.43}, {"shop": "文具办公专营店", "sales": 1166229, "gmv": 1766005668.26}, {"shop": "简衣女装店", "sales": 1165829, "gmv": 1743272950.58}, {"shop": "悦动运动专营店", "sales": 1165443, "gmv": 1760687635.1}, {"shop": "康健保健专营店", "sales": 1163876, "gmv": 1738762986.15}, {"shop": "极客数码专营店", "sales": 1162485, "gmv": 1767342764.41}, {"shop": "日用百货超市", "sales": 1161557, "gmv": 1751069181.62}, {"shop": "家纺布艺专营店", "sales": 1158361, "gmv": 1744541857.78}, {"shop": "智能家电旗舰店", "sales": 1156107, "gmv": 1752248731.84}, {"shop": "母婴优选旗舰店", "sales": 1152721, "gmv": 1738198815.07}, {"shop": "厨房电器专营店", "sales": 1139988, "gmv": 1731228509.79}, {"shop": "潮男服饰旗舰店", "sales": 1133080, "gmv": 1701301364.59}];
+const BLUE = "#1F4E79";
+
+const fmt = n => n.toLocaleString("zh-CN");
+const money = n => (n / 10000).toLocaleString("zh-CN", {maximumFractionDigits: 1}) + " 万";
+
+document.getElementById("c-shop").textContent = DATA.length;
+document.getElementById("c-sales").textContent = fmt(23356390);
+document.getElementById("c-gmv").textContent = money(35219338184.56);
+document.getElementById("c-top").textContent = "手机配件专营店";
+
+const tbody = document.getElementById("tbody");
+DATA.forEach((d, i) => {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td>${i + 1}</td><td>${d.shop}</td>
+    <td class="num">${fmt(d.sales)}</td><td class="num">${fmt(d.gmv)}</td>
+    <td class="num">${(d.gmv / 35219338184.56 * 100).toFixed(1)}%</td>`;
+  tr.onclick = () => focusShop(d.shop);
+  tbody.appendChild(tr);
+});
+
+const bar = echarts.init(document.getElementById("bar"));
+const pie = echarts.init(document.getElementById("pie"));
+const scatter = echarts.init(document.getElementById("scatter"));
+
+const top10 = DATA.slice(0, 10);
+
+bar.setOption({
+  title: { text: "店铺累计销量 TOP 10", left: "center", textStyle: { fontSize: 14, color: BLUE } },
+  grid: { left: 110, right: 70, top: 46, bottom: 30 },
+  tooltip: { trigger: "axis", axisPointer: { type: "shadow" },
+    formatter: p => `${p[0].name}<br/>销量：${fmt(p[0].value)} 件` },
+  xAxis: { type: "value", axisLabel: { formatter: v => v / 1000 + "k" }, splitLine: { lineStyle: { color: "#eef2f6" } } },
+  yAxis: { type: "category", inverse: true,
+    data: top10.map(d => d.shop),
+    axisLabel: { fontSize: 11, color: "#556" }, axisLine: { show: false }, axisTick: { show: false } },
+  series: [{
+    type: "bar", data: top10.map(d => d.sales), barWidth: "58%",
+    itemStyle: { color: BLUE, borderRadius: [0, 4, 4, 0] },
+    label: { show: true, position: "right", fontSize: 10, color: "#556",
+      formatter: p => fmt(p.value) },
+    emphasis: { itemStyle: { color: "#2E70A8" } }
+  }]
+});
+
+function pieData() {
+  const rest = DATA.slice(10);
+  const restGmv = rest.reduce((s, d) => s + d.gmv, 0);
+  const arr = DATA.slice(0, 10).map(d => ({ name: d.shop, value: d.gmv }));
+  if (restGmv > 0) arr.push({ name: "其他 " + rest.length + " 家", value: restGmv });
+  return arr;
+}
+
+pie.setOption({
+  title: { text: "店铺销售额占比", left: "center", textStyle: { fontSize: 14, color: BLUE } },
+  tooltip: { trigger: "item", formatter: p => `${p.name}<br/>${money(p.value)}（${p.percent}%）` },
+  legend: { bottom: 0, type: "scroll", textStyle: { fontSize: 10 } },
+  series: [{
+    type: "pie", radius: ["38%", "62%"], center: ["50%", "48%"],
+    avoidLabelOverlap: true, data: pieData(),
+    label: { fontSize: 10, formatter: "{b}\n{d}%" },
+    labelLine: { length: 8, length2: 8 },
+    itemStyle: { borderColor: "#fff", borderWidth: 2 }
+  }]
+});
+
+scatter.setOption({
+  title: { text: "销量 vs 销售额（每家店一个点）", left: "center", textStyle: { fontSize: 14, color: BLUE } },
+  grid: { left: 90, right: 40, top: 50, bottom: 50 },
+  tooltip: { formatter: p => `${p.data[2]}<br/>销量：${fmt(p.data[0])}<br/>销售额：${money(p.data[1])}` },
+  xAxis: { name: "累计销量", nameLocation: "middle", nameGap: 28,
+    axisLabel: { formatter: v => v / 1000 + "k" }, splitLine: { lineStyle: { color: "#eef2f6" } } },
+  yAxis: { name: "累计销售额（万）", nameLocation: "middle", nameGap: 56,
+    axisLabel: { formatter: v => (v / 10000).toFixed(0) },
+    splitLine: { lineStyle: { color: "#eef2f6" } } },
+  series: [{
+    type: "scatter", symbolSize: 14,
+    data: DATA.map(d => [d.sales, d.gmv, d.shop]),
+    itemStyle: { color: BLUE, opacity: .75 }
+  }]
+});
+
+function focusShop(name) {
+  bar.dispatchAction({ type: "highlight", seriesIndex: 0, name: name });
+  pie.dispatchAction({ type: "highlight", seriesIndex: 0, name: name });
+  const d = DATA.find(x => x.shop === name);
+  document.getElementById("tip").innerHTML =
+    `<b style="color:${BLUE}">${name}</b> ｜ 销量 ${fmt(d.sales)} 件 ｜ 销售额 ${money(d.gmv)} ｜ 占总销售额 ${(d.gmv / 35219338184.56 * 100).toFixed(1)}%`;
+  setTimeout(() => {
+    bar.dispatchAction({ type: "downplay", seriesIndex: 0, name: name });
+    pie.dispatchAction({ type: "downplay", seriesIndex: 0, name: name });
+  }, 2500);
+}
+
+bar.on("click", p => focusShop(p.name));
+window.addEventListener("resize", () => { bar.resize(); pie.resize(); scatter.resize(); });
+</script>
+</body>
+</html>
